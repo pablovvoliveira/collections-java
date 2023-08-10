@@ -1,5 +1,6 @@
 package main;
 
+import main.list.Ordenacao.OrdenarPessoas;
 import main.list.Pesquisa.CatalogoLivros;
 import main.list.operacoesBasicas.ListaTarefa;
 
@@ -22,9 +23,9 @@ public class Main {
 
         list.obterDescricoesTarefas();
 
-         */
 
-        // Testando pesquisas
+
+        Testando pesquisas
         CatalogoLivros catalogo = new CatalogoLivros();
         catalogo.adicionarLivros("Livro 1", "Autor 1", 1996);
         catalogo.adicionarLivros("Livro 2", "Autor 2", 1932);
@@ -35,6 +36,16 @@ public class Main {
         System.out.println("Livros por autor: " + catalogo.pesquisarPorAutor("Autor 4"));
         System.out.println("Livros por período: " + catalogo.pesquisarPorPeriodo(1930, 1950));
         System.out.println("Livros por título: " + catalogo.pesquisarPorTitulo("Livro 3"));
+        */
 
+        // Testando ordenação
+        OrdenarPessoas ordenar = new OrdenarPessoas();
+        ordenar.AdicionarPessoa("Maria", 25, 1.60);
+        ordenar.AdicionarPessoa("Ana", 21, 1.56);
+        ordenar.AdicionarPessoa("Roberto", 27, 1.77);
+        ordenar.AdicionarPessoa("Joao", 24, 1.80);
+
+        System.out.println("Pessoas por idade: " + ordenar.ordenarPorIdade());
+        System.out.println("Pessoas por altura: " + ordenar.ordenarPorAltura());
     }
 }
