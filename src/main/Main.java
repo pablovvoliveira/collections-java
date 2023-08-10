@@ -4,6 +4,8 @@ import main.list.Ordenacao.OrdenarPessoas;
 import main.list.Pesquisa.CatalogoLivros;
 import main.list.operacoesBasicas.ListaTarefa;
 import main.set.Pesquisa.AgendaContatos;
+import main.set.Pesquisa.ListaTarefas;
+import main.set.Pesquisa.Tarefa;
 import main.set.operacoesBasicas.ConjuntoConvidados;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -24,9 +26,9 @@ public class Main {
         conjuntoConvidados.removerPorCodigoConvite(7958);
         conjuntoConvidados.exibirConvidados();
         System.out.println("Total de convidados: " + conjuntoConvidados.contarConvidados());
-        */
 
-        // Testando pesquisas com Set
+
+         Testando pesquisas com Set
         AgendaContatos agenda = new AgendaContatos();
 
         agenda.adicionarContato("Pablo", 99958641);
@@ -41,6 +43,29 @@ public class Main {
 
         agenda.atualizarNumeroContato("Pablo", 1111111);
 
-        agenda.exibirContatos();
+        agenda.exibirContatos(); */
+
+        ListaTarefas tarefas = new ListaTarefas();
+
+        tarefas.adicionarTarefa(new Tarefa("estudar", true));
+        tarefas.adicionarTarefa(new Tarefa("trabalhar", false));
+        tarefas.adicionarTarefa(new Tarefa("treinar", false));
+        tarefas.adicionarTarefa(new Tarefa("almoçar", false));
+
+        tarefas.exibirTarefas();
+        System.out.println(tarefas.contarTarefas());
+        tarefas.removerTarefa("trabalhar");
+        System.out.println(tarefas.contarTarefas());
+        System.out.println("Tarefas concluídas: " + tarefas.obterTarefasConcluidas());
+        System.out.println("Tarefas pendentes: " + tarefas.obterTarefasPendentes());
+
+        tarefas.marcarTarefaConcluida("almoçar");
+        tarefas.marcarTarefaPendente("estudar");
+
+        tarefas.exibirTarefas();
+        tarefas.limparListaTarefas();
+        tarefas.exibirTarefas();
+
+
     }
 }
