@@ -3,6 +3,7 @@ package main;
 import main.list.Ordenacao.OrdenarPessoas;
 import main.list.Pesquisa.CatalogoLivros;
 import main.list.operacoesBasicas.ListaTarefa;
+import main.set.Ordenacao.CadastroProdutos;
 import main.set.Pesquisa.AgendaContatos;
 import main.set.Pesquisa.ListaTarefas;
 import main.set.Pesquisa.Tarefa;
@@ -43,7 +44,7 @@ public class Main {
 
         agenda.atualizarNumeroContato("Pablo", 1111111);
 
-        agenda.exibirContatos(); */
+        agenda.exibirContatos();
 
         ListaTarefas tarefas = new ListaTarefas();
 
@@ -66,6 +67,17 @@ public class Main {
         tarefas.limparListaTarefas();
         tarefas.exibirTarefas();
 
+         */
+
+        // Testando ordenação com Set
+        CadastroProdutos cadastro = new CadastroProdutos();
+        cadastro.adicionarProduto(1L, "Produto 1", 15.1, 6);
+        cadastro.adicionarProduto(2L, "Produto 2", 27.9, 6);
+        cadastro.adicionarProduto(3L, "Produto 3", 15.42, 6);
+        cadastro.adicionarProduto(4L, "Produto 4", 1.25, 6);
+
+        System.out.println(cadastro.exibirProdutosPorNome());
+        System.out.println(cadastro.exibirProdutosPorPreco());
 
     }
 }
